@@ -60,13 +60,14 @@ public:
         return numeroDecimal;
     }
 
-    static int numDigitos(int n, int base) {
+    static int numDigitos(int n) {
         unsigned int numeroDigitos = 0;
         do {
             ++numeroDigitos;
-            n /= base;
+            n /= 10;
         } while (n);
 
+        return numeroDigitos;
 
     }
 
@@ -78,6 +79,7 @@ int main()
     int numFactorial;
     double notaEstudiante;
     long numBinario;
+    int numDigitos;
     Calculo calculo;
     cout << "Ejercicio 1: Numero mayor. Digite tres numeros\n";
     cout << "Ingrese el primer numero: "; cin >> a;
@@ -102,5 +104,8 @@ int main()
     cout << "Ingrese el numero binario: "; cin >> numBinario;
     cout << "El numero decimal es: " << calculo.numBinario(numBinario);
 
+    cout << "\n Ejercicio 6: Cantidad de digitos de un numero.\n";
+    cout << "Ingrese la cifra de numeros: "; cin >> numDigitos;
+    cout << "La cantidad de digitos del numero ingresado es de: " << calculo.numDigitos(numDigitos);
     
 }
